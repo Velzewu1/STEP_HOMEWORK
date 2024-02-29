@@ -4,7 +4,7 @@ import requests
 
 def get_weather():
     """Gets weather using Bs4"""
-    page = requests.get("https://yandex.kz/pogoda/astana", timeout=200)   
+    page = requests.get("https://yandex.kz/pogoda/astana", timeout=200)
     soup = BeautifulSoup(page.text, "html.parser")
     real_temp = soup.findAll("span", class_="temp__value temp__value_with-unit")[1]
     feel_temp = soup.findAll("span", class_="temp__value temp__value_with-unit")[2]

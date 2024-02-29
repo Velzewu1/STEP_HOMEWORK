@@ -1,10 +1,9 @@
 """Task1"""
 from pathlib import Path
-from random import randint
+import asyncio
 import requests
 import aiohttp
 import aiofiles
-import asyncio
 
 def write_img(url, path):
     """Gets image using requests"""
@@ -16,7 +15,7 @@ def write_img(url, path):
     finally:
         response = requests.get(url , timeout=200).json()
         iter_count = 1
-        for to_write in response:  
+        for to_write in response:
             file_path = parent_dir_path / f"json{iter_count}.txt"
             with open(file_path, mode="w", encoding="utf-8") as file:
                 file.write(str(to_write))

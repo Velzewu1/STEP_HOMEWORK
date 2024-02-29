@@ -1,10 +1,11 @@
+"""TAsk 6"""
 import os
 import platform
 
+from pathlib import Path
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
-from pathlib import Path
 
 def get_platform() -> str:
     """
@@ -22,7 +23,7 @@ def load_chrome_driver(platform: str) -> webdriver.Chrome:
 
     Returns:
         webdriver.Chrome: The loaded Chrome webdriver object.
-    """    
+    """
     # Загружаем драйвер Chrome
     chrome_driver_path = str(
         Path(__file__).parent / "parser_drivers" / "chromedriver" / "chromedriver"
